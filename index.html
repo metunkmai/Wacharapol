@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบสอบถาม</title>
+    <style>
+        body {
+            background-color: #f8e9d5;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        hr {
+            margin: 20px 0;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .form-group input[type="checkbox"],
+        .form-group input[type="radio"] {
+            width: auto;
+        }
+        .form-group button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>แบบสอบถาม</h2>
+        <hr>
+        <form>
+            <div class="form-group">
+                <label for="name">ชื่อ-นามสกุล</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="student-id">รหัสนักศึกษา</label>
+                <input type="text" id="student-id" name="student-id">
+            </div>
+            <div class="form-group">
+                <label>เพศ</label>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">ชาย</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">หญิง</label>
+            </div>
+            <div class="form-group">
+                <label for="faculty">สังกัดคณะ</label>
+                <select id="faculty" name="faculty">
+                    <option value="science">วิทยาศาสตร์</option>
+                    <option value="engineering">วิศวกรรมศาสตร์</option>
+                    <option value="medicine">แพทยศาสตร์</option>
+                    <option value="business">บริหารธุรกิจ</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>แม่สีที่ชอบ</label>
+                <input type="checkbox" id="red" name="color" value="red">
+                <label for="red">สีแดง</label>
+                <input type="checkbox" id="blue" name="color" value="blue">
+                <label for="blue">สีน้ำเงิน</label>
+                <input type="checkbox" id="green" name="color" value="green">
+                <label for="green">สีเขียว</label>
+            </div>
+            <div class="form-group">
+                <label>ผลไม้ที่ชอบ</label>
+                <input type="checkbox" id="apple" name="fruit" value="apple">
+                <label for="apple">แอปเปิ้ล</label>
+                <input type="checkbox" id="banana" name="fruit" value="banana">
+                <label for="banana">กล้วย</label>
+                <input type="checkbox" id="orange" name="fruit" value="orange">
+                <label for="orange">ส้ม</label>
+            </div>
+            <div class="form-group">
+                <label>อาหารที่ชอบ</label>
+                <input type="checkbox" id="chicken" name="food" value="chicken">
+                <label for="chicken">ไก่ย่าง</label>
+                <input type="checkbox" id="rice" name="food" value="rice">
+                <label for="rice">ข้าวมันไก่</label>
+            </div>
+            <div class="form-group">
+                <button type="submit">บันทึก</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
