@@ -1,132 +1,155 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Form</title>
+    <title>แบบสอบถาม</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f8f1e4;
+            padding: 20px;
+        }
+        .container {
+            width: 500px;
+            margin: 0 auto;
+            background-color: #fff8dc;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        h2 {
             text-align: center;
         }
-        .form-container {
-            margin: auto;
-            width: 50%;
-            background-color: #f5deb3;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .form-container h1 {
-            margin-bottom: 20px;
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: #ccc;
         }
         label {
             display: block;
-            margin: 10px 0 5px;
+            margin-bottom: 5px;
         }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        input[type="text"], select {
+        input[type="text"] {
             width: 100%;
             padding: 8px;
-            margin-top: 5px;
+            margin-bottom: 10px;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 4px;
         }
-        .checkbox-group, .radio-group {
-            text-align: left;
-            margin-left: 20px;
+        select {
+            width: 50%;
+            margin: 0 auto;
+            display: block;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
-        .checkbox-group label, .radio-group label {
-            display: inline-block;
+        .radio-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .radio-group label {
             margin-right: 15px;
         }
-        button {
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .grid-group {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .grid-group div {
+            display: flex;
+            align-items: center;
+        }
+        .grid-group input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        input[type="submit"] {
             background-color: #4CAF50;
             color: white;
-            padding: 10px 20px;
             border: none;
-            border-radius: 5px;
+            padding: 10px 20px;
             cursor: pointer;
+            border-radius: 4px;
         }
-        button:hover {
+        input[type="submit"]:hover {
             background-color: #45a049;
         }
     </style>
 </head>
 <body>
-    <h1>แบบสอบถาม</h1>
-    <div class="form-container">
+    <div class="container">
+        <h2>แบบสอบถาม</h2>
+        <hr>
         <form>
-            <div class="form-group">
-                <label for="name">ชื่อ-นามสกุล</label>
-                <input type="text" id="name" name="name" placeholder="กรอกชื่อ-นามสกุล">
-            </div>
-            <div class="form-group">
-                <label for="student-id">รหัสนักศึกษา</label>
-                <input type="text" id="student-id" name="student-id" placeholder="กรอกรหัสนักศึกษา">
-            </div>
-            <div class="form-group radio-group">
-                <label>เพศ</label>
+            <label for="name">ชื่อ-นามสกุล</label>
+            <input type="text" id="name" name="name">
+
+            <label for="student-id">รหัสนักศึกษา</label>
+            <input type="text" id="student-id" name="student-id">
+
+            <label>เพศ</label>
+            <div class="radio-group">
                 <input type="radio" id="male" name="gender" value="male">
                 <label for="male">ชาย</label>
                 <input type="radio" id="female" name="gender" value="female">
                 <label for="female">หญิง</label>
             </div>
-            <div class="form-group">
-                <label for="faculty">สังกัดคณะ</label>
-                <select id="faculty" name="faculty">
-                    <option value="วิทยาศาสตร์">วิทยาศาสตร์</option>
-                    <option value="วิทยาการคอมพิวเตอร์">วิทยาการคอมพิวเตอร์</option>
-                    <option value="ครุศาสตร์">ครุศาสตร์</option>
-                    <option value="มนุษย์ศาสตร์">มนุษย์ศาสตร์</option>
-                    <option value="เทคโนโลยีอุตสาหกรรม">เทคโนโลยีอุตสาหกรรม</option>
-                    <option value="เกษตรศาสตร์">เกษตรศาสตร์</option>
-                    <option value="พยาบาลศาสตร์">พยาบาลศาสตร์</option>
-                    <option value="สาธารณสุขศาสตร์">สาธารณสุขศาสตร์</option>
-                    <option value="แพทย์แผนไทยและทางเลือก">แพทย์แผนไทยและทางเลือก</option>
-                    <option value="นิติศาสตร์">นิติศาสตร์</option>
-                </select>
-            </div>
-            <div class="form-group checkbox-group">
-                <label>แม่สีที่ชอบ</label>
-                <input type="checkbox" id="red" name="color" value="red">
+
+            <label for="faculty">สังกัดคณะ</label>
+            <select id="faculty" name="faculty">
+                <option value="science">วิทยาศาสตร์</option>
+                <option value="computer-science">วิทยาการคอมพิวเตอร์</option>
+                <option value="education">ครุศาสตร์</option>
+                <option value="business">บริหารธุรกิจและการจัดการ</option>
+                <option value="humanities">มนุษยศาสตร์</option>
+                <option value="engineering">เทคโนโลยีอุตสาหกรรม</option>
+                <option value="agriculture">เกษตรศาสตร์</option>
+                <option value="nursing">พยาบาลศาสตร์</option>
+                <option value="science-agriculture">สารสนเทศศาสตร์</option>
+                <option value="thai-medicine">แพทย์แผนไทยและการเลือกใช้</option>
+            </select>
+
+            <label>แม่สีที่ชื่นชอบ</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="red" name="favorite-color" value="red">
                 <label for="red">สีแดง</label>
-                <input type="checkbox" id="green" name="color" value="green">
+                <input type="checkbox" id="green" name="favorite-color" value="green">
                 <label for="green">สีเขียว</label>
-                <input type="checkbox" id="blue" name="color" value="blue">
+                <input type="checkbox" id="blue" name="favorite-color" value="blue">
                 <label for="blue">สีน้ำเงิน</label>
             </div>
-            <div class="form-group checkbox-group">
-                <label>ผลไม้ที่ชอบ</label>
-                <input type="checkbox" id="mango" name="fruit" value="mango">
-                <label for="mango">มะม่วง</label>
-                <input type="checkbox" id="orange" name="fruit" value="orange">
-                <label for="orange">ส้ม</label>
-                <input type="checkbox" id="banana" name="fruit" value="banana">
-                <label for="banana">กล้วย</label>
-                <input type="checkbox" id="durian" name="fruit" value="durian">
-                <label for="durian">ทุเรียน</label>
-                <input type="checkbox" id="watermelon" name="fruit" value="watermelon">
-                <label for="watermelon">แตงโม</label>
+
+            <label>ผลไม้ที่ชื่นชอบ</label>
+            <div class="grid-group">
+                <div><input type="checkbox" name="fruit" value="mango"> มะม่วง</div>
+                <div><input type="checkbox" name="fruit" value="custard_apple"> น้อยหน่า</div>
+                <div><input type="checkbox" name="fruit" value="durian"> ทุเรียน</div>
+                <div><input type="checkbox" name="fruit" value="longan"> ลำใย</div>
+                <div><input type="checkbox" name="fruit" value="guava"> ฝรั่ง</div>
+                <div><input type="checkbox" name="fruit" value="watermelon"> แตงโม</div>
             </div>
-            <div class="form-group checkbox-group">
-                <label>อาหารที่ชอบ</label>
-                <input type="checkbox" id="fried-chicken" name="food" value="fried-chicken">
-                <label for="fried-chicken">ไก่ทอดหม้อใหญ่</label>
-                <input type="checkbox" id="papaya-salad" name="food" value="papaya-salad">
-                <label for="papaya-salad">ส้มตำ</label>
-                <input type="checkbox" id="fried-rice" name="food" value="fried-rice">
-                <label for="fried-rice">ข้าวผัด</label>
-                <input type="checkbox" id="noodle" name="food" value="noodle">
-                <label for="noodle">ผัดไทย</label>
-                <input type="checkbox" id="grilled-pork" name="food" value="grilled-pork">
-                <label for="grilled-pork">หมูย่าง</label>
-                <input type="checkbox" id="crispy-pork" name="food" value="crispy-pork">
-                <label for="crispy-pork">ราดหน้าหมูกรอบ</label>
+
+            <label>อาหารที่ชื่นชอบ</label>
+            <div class="grid-group">
+                <div><input type="checkbox" name="food" value="tom_yum"> ต้มยำกุ้ง</div>
+                <div><input type="checkbox" name="food" value="omelette"> ไข่เจียวหมูสับ</div>
+                <div><input type="checkbox" name="food" value="chicken_soup"> แกงข่าไก่</div>
+                <div><input type="checkbox" name="food" value="green_curry"> แกงเขียวหวานไก่</div>
+                <div><input type="checkbox" name="food" value="pad_thai"> ผัดไทย</div>
+                <div><input type="checkbox" name="food" value="crispy_noodles"> ราดหน้าหมี่กรอบ</div>
             </div>
-            <button type="submit">บันทึก</button>
+
+            <input type="submit" value="บันทึก">
         </form>
     </div>
 </body>
