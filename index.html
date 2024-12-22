@@ -3,154 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>แบบสอบถาม</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f1e4;
-            padding: 20px;
-        }
-        .container {
-            width: 500px;
-            margin: 0 auto;
-            background-color: #fff8dc;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        h2 {
-            text-align: center;
-        }
-        hr {
-            border: 0;
-            height: 1px;
-            background-color: #ccc;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        input[type="text"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        select {
-            width: 50%;
-            margin: 0 auto;
-            display: block;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .radio-group {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-        .radio-group label {
-            margin-right: 15px;
-        }
-        .checkbox-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-        .grid-group {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-        .grid-group div {
-            display: flex;
-            align-items: center;
-        }
-        .grid-group input[type="checkbox"] {
-            margin-right: 5px;
-        }
-        input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <title>Wed Form</title>
 </head>
+
 <body>
-    <div class="container">
-        <h2>แบบสอบถาม</h2>
-        <hr>
-        <form>
-            <label for="name">ชื่อ-นามสกุล</label>
-            <input type="text" id="name" name="name">
+  
+    <h1 style="text-align: center;">แบบสอบถาม</h1>
+    <hr>
+    
+    <form>
+        <table align="center" style="background-color: #FFFFE0; padding: 20px; border: 1px solid #ccc;">
+           <tr>
+            <td><b>ข้อมูลผู้ตอบแบบสอบถาม</b></td>
+           </tr>
+          <tr>
+                <td><b><label> ชื่อ-นามสกุล: </label> </b>
+                  <input type="text" name="name"></td>
+                
+            </tr>
+            <tr>
+                <td>
+                  <b> <label>รหัสนักศึกษา:</label></b>
+                  <input type="text" name="studentID">
+                </td>
+                
+            </tr>
+            <tr>
+                <td><b> <label>เพศ:</label></b> <input type="radio" name="gender" value="male" checked> ชาย 
+                  <input type="radio" name="gender" value="female"> หญิง</td>
+               
+                  
+                
+            </tr>
+            <tr>
+              
+              <td><b><label for="cars">สังกัดคณะ:</label></b>
+                 <select name="faculty" >
+                        <option>วิทยาศาสตร์</option>
+                        <option>วิทยาการคอมพิวเตอร์</option>
+                        <option>ครุศาสตร์</option>
+                        <option>บริหารธุรกิจ</option>
+                        <option>เกษตรศาสตร์</option>
+                        <option>พยาบาลศาสตร์</option>
+                        <option>เทคโนโลยีอุตสาหกรรม</option>
+                        <option>สาธารณสุขศาสตร์</option>
+                         
+                    </select></td>
+                  
+                  
+            <tr>
+                <td><b>แม่สีที่ชื่นชอบ:</b><br>
+                  <input type="checkbox" name="color" value="red"> สีแดง
+                    <input type="checkbox" name="color" value="blue"> สีน้ำเงิน
+                    <input type="checkbox" name="color" value="green"> สีเขียว
+                  </td>
+              
+            </tr>
+            <tr>
+                <td><b>ผลไม้ที่ชื่นชอบ:</b><br>
 
-            <label for="student-id">รหัสนักศึกษา</label>
-            <input type="text" id="student-id" name="student-id">
-
-            <label>เพศ</label>
-            <div class="radio-group">
-                <input type="radio" id="male" name="gender" value="male">
-                <label for="male">ชาย</label>
-                <input type="radio" id="female" name="gender" value="female">
-                <label for="female">หญิง</label>
-            </div>
-
-            <label for="faculty">สังกัดคณะ</label>
-            <select id="faculty" name="faculty">
-                <option value="science">วิทยาศาสตร์</option>
-                <option value="computer-science">วิทยาการคอมพิวเตอร์</option>
-                <option value="education">ครุศาสตร์</option>
-                <option value="business">บริหารธุรกิจและการจัดการ</option>
-                <option value="humanities">มนุษยศาสตร์</option>
-                <option value="engineering">เทคโนโลยีอุตสาหกรรม</option>
-                <option value="agriculture">เกษตรศาสตร์</option>
-                <option value="nursing">พยาบาลศาสตร์</option>
-                <option value="science-agriculture">สารสนเทศศาสตร์</option>
-                <option value="thai-medicine">แพทย์แผนไทยและการเลือกใช้</option>
-            </select>
-
-            <label>แม่สีที่ชื่นชอบ</label>
-            <div class="checkbox-group">
-                <input type="checkbox" id="red" name="favorite-color" value="red">
-                <label for="red">สีแดง</label>
-                <input type="checkbox" id="green" name="favorite-color" value="green">
-                <label for="green">สีเขียว</label>
-                <input type="checkbox" id="blue" name="favorite-color" value="blue">
-                <label for="blue">สีน้ำเงิน</label>
-            </div>
-
-            <label>ผลไม้ที่ชื่นชอบ</label>
-            <div class="grid-group">
-                <div><input type="checkbox" name="fruit" value="mango"> มะม่วง</div>
-                <div><input type="checkbox" name="fruit" value="custard_apple"> น้อยหน่า</div>
-                <div><input type="checkbox" name="fruit" value="durian"> ทุเรียน</div>
-                <div><input type="checkbox" name="fruit" value="longan"> ลำใย</div>
-                <div><input type="checkbox" name="fruit" value="guava"> ฝรั่ง</div>
-                <div><input type="checkbox" name="fruit" value="watermelon"> แตงโม</div>
-            </div>
-
-            <label>อาหารที่ชื่นชอบ</label>
-            <div class="grid-group">
-                <div><input type="checkbox" name="food" value="tom_yum"> ต้มยำกุ้ง</div>
-                <div><input type="checkbox" name="food" value="omelette"> ไข่เจียวหมูสับ</div>
-                <div><input type="checkbox" name="food" value="chicken_soup"> แกงข่าไก่</div>
-                <div><input type="checkbox" name="food" value="green_curry"> แกงเขียวหวานไก่</div>
-                <div><input type="checkbox" name="food" value="pad_thai"> ผัดไทย</div>
-                <div><input type="checkbox" name="food" value="crispy_noodles"> ราดหน้าหมี่กรอบ</div>
-            </div>
-
-            <input type="submit" value="บันทึก">
-        </form>
-    </div>
+                    <input type="checkbox" name="fruit" value="mango"> มะม่วง
+                    <input type="checkbox" name="fruit" value="orange"> น้อยหน่า
+                    <input type="checkbox" name="fruit" value="banana"> ทุเรียน<br>
+                    <input type="checkbox" name="fruit" value="banana"> ลำใย
+                    <input type="checkbox" name="fruit" value="banana"> ฝรั่ง
+                    <input type="checkbox" name="fruit" value="banana"> แตงโม
+                </td>
+            </tr>
+            <tr>
+                <td><b>อาหารที่ชื่นชอบ:</b><br>
+                    <input type="checkbox" name="food" value="grilled_pork"> ต้มยำกุ้ง
+                    <input type="checkbox" name="food" value="fried_rice"> ไข่เจียวหมูสับ
+                    <input type="checkbox" name="food" value="grilled_pork"> แกงข่าไก่<br>
+                    <input type="checkbox" name="food" value="grilled_pork"> แกงเขียวหวานไก่
+                    <input type="checkbox" name="food" value="grilled_pork"> ผัดไทย
+                    <input type="checkbox" name="food" value="grilled_pork">ราดหน้าหมี่กรอบ
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;"><br>
+                    <input type="submit" value="บันทึก">
+                </td>
+            </tr>
+        </table>
+    </form>
 </body>
 </html>
